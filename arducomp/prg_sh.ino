@@ -23,9 +23,9 @@ void _sh_tokenizeInput()
   char current_token = 0;
   char current_token_pos = 0;
   argc = 0;
-  while (*cur_char != '\0' && *cur_char != '\n')
+  while (*cur_char != '\0' && *cur_char != '\n' && argc < _max_argc)
   {
-    while (*cur_char != ' ' && *cur_char != '\0' && *cur_char != '\n')
+    while (*cur_char != ' ' && *cur_char != '\0' && *cur_char != '\n' && current_token_pos < _max_argl)
     {
       argv[current_token][current_token_pos] = *cur_char;
       current_token_pos++;
@@ -46,9 +46,15 @@ void _sh_interpretTokens()
     return;
   else if (strcmp(argv[0], "yes") == 0)
     PrgStarts[PrgID::yes]();
+  else if (strcmp(argv[0], "pinmode") == 0)
+    PrgStarts[PrgID::pinmode]();
+  else if (strcmp(argv[0], "digitalwrite") == 0)
+    PrgStarts[PrgID::digitalwrite]();
   else
+  {
     Serial.print("Unrecognized command ");
     Serial.println(argv[0]);
+  }
 }
 
 int sh_prg_start()

@@ -5,6 +5,10 @@ ArduComp is a small pseudo-OS written for Arduino for fun. It has a simple shell
 
 So far the current programs are implemented:
 
+* digitalwrite
+
+* pinmode
+
 * yes
 
 ArduComp is licensed under the MIT License if you want to use it for some reason :)
