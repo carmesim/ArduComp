@@ -4,15 +4,17 @@ enum PrgID
   yes = 1,
   pinmode = 2,
   digitalwrite = 3,
+  _delay = 4
 };
 
-static const char PrgNum = 4;
+static const char PrgNum = 5;
 
 int (*PrgStarts[PrgNum])() = {
   sh_prg_start,
   yes_prg_start,
   pinmode_prg_start,
-  digitalwrite_prg_start
+  digitalwrite_prg_start,
+  delay_prg_start
 };
 
 static const char _max_argc = 16;

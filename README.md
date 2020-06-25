@@ -5,6 +5,8 @@ ArduComp is a small pseudo-OS written for Arduino for fun. It has a simple shell
 
 So far the current programs are implemented:
 
+* delay
+
 * digitalwrite
 
 * pinmode

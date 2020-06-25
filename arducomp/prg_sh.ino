@@ -50,6 +50,8 @@ void _sh_interpretTokens()
     PrgStarts[PrgID::pinmode]();
   else if (strcmp(argv[0], "digitalwrite") == 0)
     PrgStarts[PrgID::digitalwrite]();
+  else if (strcmp(argv[0], "delay") == 0)
+    PrgStarts[PrgID::_delay]();
   else
   {
     Serial.print("Unrecognized command ");
